@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+    /*font-family: 'Outfit', sans-serif;*/
+    :root{
+        /*Primary*/
+        --soft-blue:hsl(215, 51%, 70%);
+        --cyan:hsl(178, 100%, 50%);
+        /*Neutral*/
+        --very-dark-blue-main:hsl(217, 54%, 11%);
+        --very-dark-blue-card: hsl(216, 50%, 16%);
+        --very-dark-blue-line:hsl(215, 32%, 27%);/*linea entre author y el resto de la card*/
+        --white:hsl(0, 0%, 100%);
+        --Paragraph:18px;
+    } 
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+    html{
+      font-size: 62.5%;
+    }
+    body{
+      font-family:'Outfit', sans-serif;
+      background: var(--very-dark-blue-main);
+    }
+    .card{
+      width:350px;
+      margin:2rem auto;
+    }
+    .container{
+      background: var(--very-dark-blue-card);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.75);
+
+    }
+    .imagenes-arriba{
+      border-radius: 15px;
+      position:relative;
+      overflow: hidden;
+    }
+    .imagenes-arriba img{
+      width:100%;
+      display: block;
+    }
+    .ojito{
+      position:absolute;
+      left:0;
+      top:0;
+      height: 100%;
+      width: 100%;
+      background: hsl(178, 100%, 50%,0.5);
+      display: none;
+    }
+    .ojito img{
+      position:absolute;
+      width:5rem;
+      left:42%;
+      top:42%;
+    }
+    .imagenes-arriba:hover .ojito{
+      display: block;
+    }
+
+    .name a{
+      color:var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 2.1rem;
+      padding:2rem 0;
+      display: inline-block;
+    }
+    .title p{
+      font-size: 1.8rem;
+    }
+    .name a:hover{
+      color:var(--cyan);
+    }
+
+    p{
+      color:var(--soft-blue);
+      font-size: 1.8rem;
+    }
+    
+    .price{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding:2rem 0;
+    }
+    .price p:first-child{
+      color:var(--cyan);
+      font-weight: 600;
+      padding-left: 0.7rem;
+    }
+    .price p:last-child{
+      color:var(--soft-blue);
+    }
+
+    hr{
+      border-color:var(--very-dark-blue-line);
+    }
+    .author{
+      display: flex;
+      align-items: center;
+      padding-top:2rem;
+    }
+    .author img{
+      height: 3rem;
+      width: 3rem;
+      border-radius: 5rem;
+      border:0.2rem solid white;
+      margin-right: 1.5rem;
+    }
+    .author p a{
+      color:white;
+      font-size: 1.6rem;
+      text-decoration: none;
+      margin-right: 1.5rem;
+    }
+    .author p a:hover{
+      color:var(--cyan);
+    }
+  </style>
+
+</head>
+<body>
+  <div class="card">
+    <div class="container">
+      
+      <div class="imagenes-arriba">
+        <img src="./images/image-equilibrium.jpg" alt="Imagen">
+        <div class="ojito">
+          <img src="./images/icon-view.svg" alt="view">
+        </div>
+      </div>
+      
+      <div class="contenido">
+       
+        <div class="title">
+          <h1 class="name"><a href="">Equilibrium #3429</a></h1>
+          <p class="description">Our Equilibrium collection promotes balance and calm.</p>
+        </div>
+        
+        <div class="price">
+          <p><img src="./images/icon-ethereum.svg" alt="ethereum"> 0.041 ETH</p>
+          <p><img src="./images/icon-clock.svg" alt="clock"> 3 days left</p>
+        </div>
+        <hr>
+       
+        <div class="author">
+          <img src="./images/image-avatar.png" alt="avatar">
+          <p>Creation of <a href="/">Jules Wyvern</a></p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
